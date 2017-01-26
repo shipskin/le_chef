@@ -41,8 +41,7 @@ module FollowLogs
         notifies :restart, 'service[logentries]'
       end
     else
-      templ = "[#{name}]
-path=#{path}"
+      templ = "[#{name}]\npath=#{path}"
       unless node['le']['datahub']['enable']
         templ += "\n"
         templ += "token=#{token}"
