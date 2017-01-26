@@ -16,6 +16,5 @@
 # limitations under the License.
 #
 
-include_recipe 'logentries_agent::install'
-include_recipe 'logentries_agent::configure'
-
+include_recipe 'logentriesagent::install'
+include_recipe 'logentriesagent::configure'
