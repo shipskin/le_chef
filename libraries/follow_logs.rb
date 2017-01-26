@@ -18,6 +18,7 @@
 module FollowLogs
 
   def follow_logs()
+    filter()
     node['le']['logs_to_follow'].each do |l|
       if l.instance_of? Chef::Node::ImmutableMash
         follow(l[:name], l[:log], l[:token])
@@ -55,6 +56,18 @@ path=#{path}"
         end
         notifies :restart, 'service[logentries]'
       end
+    end
+  end
+
+  def filter()
+    filter_file = 'filters=/etc/le_filters'
+    ruby_block 'append config' do
+      block do
+        file = Chef::Util::FileEdit.new('/etc/le/config')
+        file.insert_line_if_no_match(/\[#{name}\]/, filter_file)
+        file.write_file
+      end
+      notifies :restart, 'service[logentries]'
     end
   end
 end
