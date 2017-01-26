@@ -25,7 +25,7 @@ case node['platform']
       distribution node['lsb']['codename']
       components ['main']
       keyserver node['le']['pgp_key_server']
-      key 'C43C79AD'
+      key 'A5270289C43C79AD'
       retries 3
     end
   when 'centos', 'redhat', 'amazon', 'scientific'
