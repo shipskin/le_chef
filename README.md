@@ -88,6 +88,13 @@ Usage
 
 Put depends 'yum', and 'apt', in your metadata.rb to gain access to the resources.
 
+
+Filter function
+---------------
+
+In the follow_logs.rb library I added a filter function that appends a filter rule to the le config file. If you want to see my recipe to make the filter files ask me! shipskin@gmail.com
+
+
 Updating the Logentries Agent
 =============================
 
