@@ -7,7 +7,7 @@ long_description  'Installs the Logentries python agent and configures it to fol
 recipe            'logentriesagent::default',   'Downloads the agent and sets up logging'
 recipe            'logentriesagent::install',    'Download and install the agent from le repo'
 recipe            'logentriesagent::configure', 'Register and le start agent, follow files'
-version           '0.1'
+version           '0.2'
 source_url        'https://github.com/shipskin/le_chef' if respond_to?(:source_url)
 issues_url        'https://github.com/shipskin/le_chef/issues' if respond_to?(:issues_url)
 
